@@ -7,7 +7,7 @@
         <form action="/user/create" method="POST">
             {{ csrf_field() }}
         <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Name</label>
+                <label for="name" class="form-label">Name</label>
                 <input type="text" class="form-control" id="name" name="name">
             </div>
 
@@ -26,9 +26,10 @@
                 <label for="exampleInputPassword1" class="form-label">Phone Number</label>
                 <input type="tel" class="form-control" id="exampleInputPassword1" name="phone_number">
             </div>
-            
             <button type="submit" class="btn btn-primary" id="submit-user-regis-btn">Submit</button>
         </form>
+        <button class="btn btn-primary" id="back-user-regis-btn"><a href="/">Kembali</a></button>
+        <p>Ingin mendaftarkan toko anda? Silahkan klik <a href="/registertoko">di sini!</a></p>
     </div>
 </div>
 

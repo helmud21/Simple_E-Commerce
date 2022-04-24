@@ -17,4 +17,6 @@ use App\Http\Controllers\RegisterController;
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/register', [RegisterController::class, 'index']);
-Route::post('/user/create', [RegisterController::class, 'create']);
+Route::get('/registertoko', [RegisterController::class, 'createShop']);
+Route::post('/user/create', [RegisterController::class, 'userCreate']);
+Route::post('/shop/create', [RegisterController::class, 'shopInsert']);

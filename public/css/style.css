@@ -50,6 +50,7 @@
     border: solid 1px black;
     border-radius: 0.5rem;
     margin-top: 20px;
+    margin-bottom: 30px;
 }
 
 #form-user-regis form {
@@ -61,6 +62,55 @@
 #form-user-regis form #submit-user-regis-btn {
     position: absolute;
     right: 0px;
+}
+
+#shop-regis {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#form-shop-regis {
+    border: solid 1px black;
+    border-radius: 0.5rem;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+#form-shop-regis form {
+    position: relative;
+    margin: 20px;
+    height: 700px;
+}
+
+#submit-shop-regis-btn {
+    position: absolute;
+    right: 0px;
+    bottom: 0;
+}
+
+#back-shop-regis-btn {
+    position: absolute;
+    right: 520px;
+    bottom: -244.4px;
+    background-color: #4b4a4d;
+}
+
+#back-user-regis-btn {
+    position: absolute;
+    right: 520px;
+    bottom: 49px;
+    background-color: #4b4a4d;
+}
+
+#back-shop-regis-btn a {
+    text-decoration: none;
+    color: white;
+}
+
+#back-user-regis-btn a {
+    text-decoration: none;
+    color: white;
 }
 
 .nav li a:hover {
