@@ -22,23 +22,18 @@
             <a class="nav-link" href="/register">Sign Up</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Sign In</a>
+            <a class="nav-link" href="/login">Sign In</a>
         </li>
+       
     </ul>
-    <div class="container" id="search-container">
-        <div class="row">
-            <div class="col-6 d-flex">
-                <input type="text" id="search" name="search" placeholder="Search here ...">
-                <button id="search-btn">Search</button>
-            </div>
-        </div>
-    </div>
+    
 
-    <div class="container">
+    <div>
         @yield('content')
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!-- <script src="js/script.js"></script> -->
 </body>
 
 </html>

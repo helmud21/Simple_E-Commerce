@@ -16,10 +16,14 @@ class UserFactory extends Factory
     {
         return [
             'name' => $this->faker->name(),
+            'provinsi_id' => $this->faker->numberBetween(1, 34),
+            'kabupaten_id' => $this->faker->numberBetween(1, 100),
+            'role' => $this->faker->word(),
             'phone_number' => $this->faker->unique()->randomNumber(9, true),
             'email' => $this->faker->unique()->safeEmail(),
             'email_verified_at' => now(),
             'password' => bcrypt($this->faker->unique()->bothify('????????##')), // password
+            'jalan' => $this->faker->streetAddress(),
             'remember_token' => Str::random(10),
         ];
     }

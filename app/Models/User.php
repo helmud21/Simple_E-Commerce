@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\Provinsi;
+use App\Models\Kabupaten;
 
 class User extends Authenticatable
 {
@@ -39,4 +41,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function provinsi () {
+        return $this->belongsTo(Provinsi::class);
+    }
+
+    public function kabupaten () {
+        return $this->belongsTo(Kabupaten::class);
+    }
 }

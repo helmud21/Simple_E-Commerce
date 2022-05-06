@@ -1,7 +1,10 @@
 @extends('layouting.master')
 
 @section('content')
-<div class="row d-flex justify-content-between mt-4" id="product-list">
+@include('layouting.search')
+
+<div class="container">
+    <div class="row d-flex justify-content-between mt-4" id="product-list">
         @foreach ($barangs as $barang)
         <div class="card mb-4 d-flex" style="width: 16rem;">
             <img src="..." class="card-img-top" alt="...">
@@ -9,7 +12,9 @@
                 <p>{{ $barang->name }}</p>
             </div>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item"><h6>RP {{ $barang->harga }}</h6></li>
+                <li class="list-group-item">
+                    <h6>RP {{ $barang->harga }}</h6>
+                </li>
                 <li class="list-group-item">Lokasi Toko</li>
             </ul>
             <div class="card-body d-flex flex-row-reverse">
@@ -17,5 +22,7 @@
             </div>
         </div>
         @endforeach
+    </div>
 </div>
 @endsection
+

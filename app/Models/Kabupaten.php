@@ -9,7 +9,11 @@ class Kabupaten extends Model
 {
     use HasFactory;
 
-    public function kabupaten() {
-        return $this->hasMany(Shop::class);
+    public function provinsi() {
+        return $this->belongsTo(Provinsi::class);
+    }
+
+    public function user() {
+        return $this->hasMany(User::class);
     }
 }

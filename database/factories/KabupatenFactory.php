@@ -14,7 +14,8 @@ class KabupatenFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->unique()->city()
+            'name' => $this->faker->unique()->city(),
+            'provinsi_id' => $this->faker->numberBetween(1, 34)
         ];
     }
 }

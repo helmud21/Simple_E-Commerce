@@ -6,7 +6,6 @@ use Illuminate\Database\Seeder;
 use \App\Models\User;
 use \App\Models\Category;
 use \App\Models\Barang;
-use \App\Models\Shop;
 use \App\Models\Provinsi;
 use \App\Models\Kabupaten;
 
@@ -21,7 +20,6 @@ class DatabaseSeeder extends Seeder
     {
         User::factory(10)->create();
         Barang::factory(20)->create();
-        Shop::factory(10)->create();
         Kabupaten::factory(60)->create();
 
         Category::create([
