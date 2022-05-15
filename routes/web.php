@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,10 +19,17 @@ use App\Http\Controllers\LoginController;
 */
 
 Route::get('/', [HomeController::class, 'index']);
-Route::get('/register', [RegisterController::class, 'index']);
 Route::get('/admin', [AdminController::class, 'index']);
-Route::get('/login', [LoginController::class, 'index']);
-Route::post('/post/login', [LoginController::class, 'login']);
-Route::get('/registertoko', [RegisterController::class, 'createShop']);
+
+//Route Registrasi
+Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/user/create', [RegisterController::class, 'userCreate']);
-Route::post('/shop/create', [RegisterController::class, 'shopInsert']);
+
+// Route Login
+Route::get('/login', [LoginController::class, 'index'])->middleware('guest')->name('login');
+Route::post('/post/login', [LoginController::class, 'login']);
+Route::post('/logout', [LoginController::class, 'logout']);
+
+// Route profile user
+Route::get('/profile/{id}', [ProfileController::class, 'index'])->middleware('auth');
+Route::get('/profile/edit/{id}', [ProfileController::class, 'edit'])->middleware('auth');

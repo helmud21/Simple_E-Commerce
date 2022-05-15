@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Provinsi;
 use App\Models\Kabupaten;
-use Illuminate\Support\Facades\Hash;
 
 class RegisterController extends Controller
 {

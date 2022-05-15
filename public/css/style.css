@@ -3,15 +3,45 @@
     padding: 0;
     box-sizing: border-box;
 }
- 
-.nav {
+
+#navbar {
     background-color: rgba(17, 200, 237, 0.75);
-    height: 50px;
+    display: flex;
     align-items: center;
+    height: 50px;
+}
+
+#navbar img {
+    height: 20px;
+    width: 20px;
+}
+
+#logout {
+    margin-left: auto;
+}
+
+#dropdown-logout {
+    background-color: rgba(17, 200, 237, 0.75);
+}
+
+#logout a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+#logout button {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+#navbar ul {
+    overflow: hidden;
 }
 
 .nav li a{
-    color: white;
+    color: black;
     font-weight: bold;
 }
 
@@ -81,46 +111,6 @@
     color: white;
 }
 
-
-/* style view pendaftaran/shop.blade.php */
-#header-shop-regis {
-    text-align: center;
-}
-
-#shop-regis {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#form-shop-regis {
-    border: solid 1px black;
-    border-radius: 0.5rem;
-    margin-top: 40px;
-    margin-bottom: 30px;
-}
-
-#form-shop-regis form {
-    position: relative;
-    margin: 20px;
-    min-height: 700px;
-}
-
-#btn-group-shop {
-    display: flex;
-    flex-direction: row-reverse;
-    margin-top: 60px;
-}
-
-#back-shop-regis-btn {
-    margin-right: 10px;
-}
-
-#back-shop-regis-btn a {
-    text-decoration: none;
-    color: white;
-}
-
 /* style view login */
 #form-login {
     border: solid 1px;
@@ -144,6 +134,79 @@
     margin-top: 5px;
 }
 
+/* style untuk halaman profile */
+#photo-profile img{
+    height: 200px;
+    width: 200px;
+    margin-bottom: 10px;
+}
+
+#photo-profile {
+    position: relative;
+}
+
+#input-file-btn {
+    position: absolute;
+    bottom: -10px;
+    right: 67px;
+}
+
+#input-file-btn img {
+    height: 40px;
+    width: 40px;
+
+}
+
+#input-file-btn input[type="file"] {
+    display: none;
+}
+.custom-file-upload {
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+#form-profile {
+    margin: 30px 0;
+    min-height: 500px;
+    display: flex;
+    justify-content: center;
+}
+
+#group-btn-profile {
+    display: flex;
+    flex-direction: row-reverse;
+    padding-right: 180px;
+}
+
+#group-btn-profile button{
+    height: 50px;
+    width: 100px;
+    margin: 10px;
+}
+
+#profile-wrapper form .col-4 {
+    /* background-color: crimson; */
+    display: flex;
+    justify-content: center;
+    border: solid 1px black;
+    margin-right: 20px;
+}
+
+#photo-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#profile-datas .input-group-text {
+    width: 130px;
+}
+
+#profile-datas .card {
+    text-align: center;
+}
+
 /* style untuk halaman admin */
 #wrapper-admin-content {
     margin-bottom: 50px;
@@ -159,5 +222,5 @@
 }
 
 .nav li a:hover {
-    color: #4b4a4d;
+    color: white;
 }

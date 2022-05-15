@@ -101,7 +101,7 @@
                 </div>
 
                 <div id="btn-group-user">
-                    <button type="submit" class="btn btn-primary" id="submit-user-regis-btn" onclick="userRole()">Submit</button>
+                    <button type="submit" class="btn btn-primary" id="submit-user-regis-btn" >Submit</button>
                     <button type="button" class="btn btn-primary" id="back-user-regis-btn"><a href="/">Back</a></button>
                 </div>
             </form>

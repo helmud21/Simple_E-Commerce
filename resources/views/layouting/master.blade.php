@@ -8,25 +8,52 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
 
-    <title>Hello, world!</title>
+    <title>Home</title>
 </head>
 
 <body>
-    <ul class="nav">
-        <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="/">Home</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="/register">Sign Up</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="/login">Sign In</a>
-        </li>
-       
-    </ul>
-    
+    <div id="navbar" class="container-fluid">
+        <div>
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="/">Home</a>
+                </li>
+                @auth
+                @else
+                <li class="nav-item">
+                    <a class="nav-link" href="/register">Register</a>
+                </li>
+                @endauth
+            </ul>
+        </div>
+        <div id="logout">
+            <ul class="nav">
+                @auth
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="" role="button" aria-expanded="false">{{ auth()->user()->name }}</a>
+                <ul class="dropdown-menu mt-1" id="dropdown-logout">
+                <li>
+                    <button class="dropdown-item"><a href="/profile/{{ auth()->user()->id }}">Profile</a></button>
+                </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li>
+                        <form action="/logout" method="POST">
+                            @csrf
+                            <button class="dropdown-item" type="submit">Logout</button>
+                        </form>
+                    </li>
+                </ul>
+                @else
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">Login<img src="images/login.png" alt="icon-login"></a>
+                </li>
+                @endauth
+            </ul>
+        </div>
+    </div>
 
     <div>
         @yield('content')
