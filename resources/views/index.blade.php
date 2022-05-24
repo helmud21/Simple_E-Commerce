@@ -6,10 +6,11 @@
 <div class="container">
     <div class="row d-flex justify-content-between mt-4" id="product-list">
         @foreach ($barangs as $barang)
+        <!-- @if($barang->role == 'Toko') -->
         <div class="card mb-4 d-flex" style="width: 16rem;">
-            <img src="..." class="card-img-top" alt="...">
+            <img src="{{ $barang->image }}" class="card-img-top" alt="...">
             <div class="card-body">
-                <p>{{ $barang->name }}</p>
+                <p>{{ $barang->barang_name }}</p>
             </div>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">
@@ -18,11 +19,16 @@
                 <li class="list-group-item">Lokasi Toko</li>
             </ul>
             <div class="card-body d-flex flex-row-reverse">
-                <a href="#" class="card-link" id="detail-btn">Detail</a>
+                <a href="/detail/{{ $barang->id_barang }}" class="card-link" id="detail-btn">Detail</a>
             </div>
         </div>
+        <!-- @endif -->
         @endforeach
     </div>
+    <div class="col-1">
+        {{ $barangs->links() }}
+    </div>
 </div>
+
 @endsection
 

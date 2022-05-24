@@ -31,5 +31,7 @@ Route::post('/post/login', [LoginController::class, 'login']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
 // Route profile user
-Route::get('/profile/{id}', [ProfileController::class, 'index'])->middleware('auth');
-Route::get('/profile/edit/{id}', [ProfileController::class, 'edit'])->middleware('auth');
+Route::get('/profile/{id}', [ProfileController::class, 'index'])->middleware('auth')->name('profile');
+Route::post('/profile/update/{id}', [ProfileController::class, 'update'])->middleware('auth');
+
+Route::get('/detail/{id}', [HomeController::class, 'detailBarang']);

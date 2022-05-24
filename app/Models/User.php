@@ -49,4 +49,8 @@ class User extends Authenticatable
     public function kabupaten () {
         return $this->belongsTo(Kabupaten::class);
     }
+
+    public function barang() {
+        return $this->hasMany(Barang::class);
+    }
 }

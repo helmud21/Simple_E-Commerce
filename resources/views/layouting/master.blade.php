@@ -33,9 +33,14 @@
                 @auth
                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="" role="button" aria-expanded="false">{{ auth()->user()->name }}</a>
                 <ul class="dropdown-menu mt-1" id="dropdown-logout">
-                <li>
-                    <button class="dropdown-item"><a href="/profile/{{ auth()->user()->id }}">Profile</a></button>
-                </li>
+                    <li>
+                        <button class="dropdown-item"><a href="/profile/{{ auth()->user()->id }}">Profile</a></button>
+                    </li>
+                    @if( auth()->user()->role == 'Toko' )
+                    <li>
+                        <button class="dropdown-item"><a href="#">Toko</a></button>
+                    </li>
+                    @endif
                     <li>
                         <hr class="dropdown-divider">
                     </li>
@@ -48,7 +53,7 @@
                 </ul>
                 @else
                 <li class="nav-item">
-                    <a class="nav-link" href="/login">Login<img src="images/login.png" alt="icon-login"></a>
+                    <a class="nav-link" href="/login">Login<img src="{{ asset('images/login.png') }}" alt="icon-login"></a>
                 </li>
                 @endauth
             </ul>

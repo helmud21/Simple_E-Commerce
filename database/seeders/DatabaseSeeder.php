@@ -22,28 +22,52 @@ class DatabaseSeeder extends Seeder
         Barang::factory(20)->create();
         Kabupaten::factory(60)->create();
 
+        User::create([
+            'name' => 'Helmud Panggabean',
+            'provinsi_id' => '3',
+            'kabupaten_id' => '5',
+            'role' => 'Pembeli',
+            'phone_number' => 987654321,
+            'email' => 'helmudpgbn@gmail.com',
+            'email_verified_at' => now(),
+            'password' => bcrypt('helmud'),
+            'jalan' => 'Jalan Terusan Ryacudu',
+        ]);
+
+        User::create([
+            'name' => 'Halak Hita',
+            'provinsi_id' => '3',
+            'kabupaten_id' => '6',
+            'role' => 'Toko',
+            'phone_number' => 112233445,
+            'email' => 'halakhita@gmail.com',
+            'email_verified_at' => now(),
+            'password' => bcrypt('lappet'),
+            'jalan' => 'Jalan Terusan Ryacudu, Sukarame',
+        ]);
+
         Category::create([
-            'name' => 'Elektronik',
+            'category_name' => 'Elektronik',
             'slug' => 'elektronik'
         ]);
 
         Category::create([
-            'name' => 'Wanita',
+            'category_name' => 'Wanita',
             'slug' => 'wanita'
         ]);
 
         Category::create([
-            'name' => 'Pria',
+            'category_name' => 'Pria',
             'slug' => 'pria'
         ]);
 
         Category::create([
-            'name' => 'Kecantikan',
+            'category_name' => 'Kecantikan',
             'slug' => 'kecantikan'
         ]);
 
         Category::create([
-            'name' => 'Olahraga',
+            'category_name' => 'Olahraga',
             'slug' => 'olahraga'
         ]);
 
