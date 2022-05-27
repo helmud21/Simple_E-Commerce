@@ -44,12 +44,12 @@
                 </div>
 
                 <div class="input-group mb-1">
-                    
                     <textarea style="padding-left: 15px;" name="detail" id="detail" cols="70" rows="10" id="detail">
                         {{ $barang->detail }}
                     </textarea>
                 </div>
 
+                <button type="button" class="btn btn-primary" id="back-detail-barang-btn"><a href="/">Back</a></button>
             </div>
         </div>
     </div>

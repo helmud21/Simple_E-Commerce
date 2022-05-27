@@ -8,7 +8,7 @@
         @foreach ($barangs as $barang)
         <!-- @if($barang->role == 'Toko') -->
         <div class="card mb-4 d-flex" style="width: 16rem;">
-            <img src="{{ $barang->image }}" class="card-img-top" alt="...">
+            <img src="{{ $barang->image }}" class="card-img-top mt-3" alt="...">
             <div class="card-body">
                 <p>{{ $barang->barang_name }}</p>
             </div>

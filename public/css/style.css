@@ -232,6 +232,16 @@
     width: 100%;
 }
 
+#back-detail-barang-btn {
+    float: right;
+    margin-top: 15px;
+}
+
+#back-detail-barang-btn a {
+    text-decoration: none;
+    color: white;
+}
+
 #update-session-wrapper {
     justify-content: center;
 }

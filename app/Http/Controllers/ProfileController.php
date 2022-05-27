@@ -28,7 +28,11 @@ class ProfileController extends Controller
         
         $user->name = $request->input('name');
         $user->email = $request->input('email');
-        $user->password = bcrypt($request->input('password'));
+        if($request['password'] == '') {
+            $user->password = $user->password;
+        } else {
+            $user->password = bcrypt($request->input('password'));
+        }
         $user->phone_number = $request->input('phone_number');
         $user->provinsi_id = $request->input('provinsi_id');
         $user->kabupaten_id = $request->input('kabupaten_id');
@@ -39,8 +43,7 @@ class ProfileController extends Controller
             $request->file('photo')->move('images/', $request->file('photo')->getClientOriginalName());
             $user->photo = $request->file('photo')->getClientOriginalName();
         }
-        // dd($user);
-        $user->save();
+        $user->update();
         return redirect()->route('profile', ['id' => $user->id])->with('success', 'Data berhasil diupdate');
     }
 }
