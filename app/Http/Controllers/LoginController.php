@@ -17,18 +17,21 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         $validatedData = $request->validate([
-            'email' => 'required|email:dns',
+            'email' => 'required',
             'password' => 'required|min:5|'
         ]);
 
         $email = $validatedData['email'];
 
         $user = DB::table('users')->select()->where('email', $email)->first();
-        // dd($user);
+        if($user == NULL) {
+            return redirect('/register')->with('failed', 'Anda belum terdaftar silahkan daftar terlebih dahulu.');
+        }
+        
         if ($user->role == 'Pembeli') {
             if (Auth::attempt($validatedData)) {
                 $request->session()->regenerate();
-                return redirect()->intended('/login');
+                return redirect()->intended('/login')->with('failed', 'Wrong email or password');
             }
 
             return back()->with('failed', 'Wrong email or password');

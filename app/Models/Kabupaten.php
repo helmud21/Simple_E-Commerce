@@ -10,10 +10,10 @@ class Kabupaten extends Model
     use HasFactory;
 
     public function provinsi() {
-        return $this->belongsTo(Provinsi::class);
+        return $this->belongsTo(Provinsi::class, 'id_provinsi');
     }
 
     public function user() {
-        return $this->hasMany(User::class);
+        return $this->hasMany(User::class, 'id');
     }
 }

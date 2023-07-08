@@ -18,9 +18,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        User::factory(10)->create();
-        Barang::factory(20)->create();
+        // User::factory(100)->create();
+        Barang::factory(100)->create();
         Kabupaten::factory(60)->create();
+
+        // Barang::create([
+
+        // ]);
 
         User::create([
             'name' => 'Helmud Panggabean',
@@ -32,6 +36,7 @@ class DatabaseSeeder extends Seeder
             'email_verified_at' => now(),
             'password' => bcrypt('helmud'),
             'jalan' => 'Jalan Terusan Ryacudu',
+            'saldo' => 10000000
         ]);
 
         User::create([
@@ -72,139 +77,139 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Provinsi::create([
-            'name' => 'Nanggore Aceh Darussalam'
+            'provinsi_name' => 'Nanggore Aceh Darussalam'
         ]);
 
         Provinsi::create([
-            'name' => 'Sumatera Utara'
+            'provinsi_name' => 'Sumatera Utara'
         ]);
 
         Provinsi::create([
-            'name' => 'Sumatera Selatan'
+            'provinsi_name' => 'Sumatera Selatan'
         ]);
 
         Provinsi::create([
-            'name' => 'Sumatera Barat'
+            'provinsi_name' => 'Sumatera Barat'
         ]);
 
         Provinsi::create([
-            'name' => 'Bengkulu'
+            'provinsi_name' => 'Bengkulu'
         ]);
 
         Provinsi::create([
-            'name' => 'Riau'
+            'provinsi_name' => 'Riau'
         ]);
 
         Provinsi::create([
-            'name' => 'Kepulauan Riau'
+            'provinsi_name' => 'Kepulauan Riau'
         ]);
 
         Provinsi::create([
-            'name' => 'Jambi'
+            'provinsi_name' => 'Jambi'
         ]);
 
         Provinsi::create([
-            'name' => 'Lampung'
+            'provinsi_name' => 'Lampung'
         ]);
 
         Provinsi::create([
-            'name' => 'Bangka Belitung'
+            'provinsi_name' => 'Bangka Belitung'
         ]);
 
         Provinsi::create([
-            'name' => 'Kalimantan Barat'
+            'provinsi_name' => 'Kalimantan Barat'
         ]);
 
         Provinsi::create([
-            'name' => 'Kalimantan Timur'
+            'provinsi_name' => 'Kalimantan Timur'
         ]);
 
         Provinsi::create([
-            'name' => 'Kalimantan Selatan'
+            'provinsi_name' => 'Kalimantan Selatan'
         ]);
 
         Provinsi::create([
-            'name' => 'Kalimantan Tengah'
+            'provinsi_name' => 'Kalimantan Tengah'
         ]);
 
         Provinsi::create([
-            'name' => 'Kalimantan Utara'
+            'provinsi_name' => 'Kalimantan Utara'
         ]);
 
         Provinsi::create([
-            'name' => 'Banten'
+            'provinsi_name' => 'Banten'
         ]);
 
         Provinsi::create([
-            'name' => 'DKI Jakarta'
+            'provinsi_name' => 'DKI Jakarta'
         ]);
 
         Provinsi::create([
-            'name' => 'Jawa Barat'
+            'provinsi_name' => 'Jawa Barat'
         ]);
 
         Provinsi::create([
-            'name' => 'Jawa Tengah'
+            'provinsi_name' => 'Jawa Tengah'
         ]);
 
         Provinsi::create([
-            'name' => 'DI Yogyakarta'
+            'provinsi_name' => 'DI Yogyakarta'
         ]);
 
         Provinsi::create([
-            'name' => 'Jawa timur'
+            'provinsi_name' => 'Jawa timur'
         ]);
 
         Provinsi::create([
-            'name' => 'Bali'
+            'provinsi_name' => 'Bali'
         ]);
 
         Provinsi::create([
-            'name' => 'Nusa Tenggara Timur'
+            'provinsi_name' => 'Nusa Tenggara Timur'
         ]);
 
         Provinsi::create([
-            'name' => 'Nusa Tenggara Barat'
+            'provinsi_name' => 'Nusa Tenggara Barat'
         ]);
 
         Provinsi::create([
-            'name' => 'Gorontalo'
+            'provinsi_name' => 'Gorontalo'
         ]);
 
         Provinsi::create([
-            'name' => 'Sulawesi Barat'
+            'provinsi_name' => 'Sulawesi Barat'
         ]);
 
         Provinsi::create([
-            'name' => 'Sulawesi Tengah'
+            'provinsi_name' => 'Sulawesi Tengah'
         ]);
 
         Provinsi::create([
-            'name' => 'Sulawesi Utara'
+            'provinsi_name' => 'Sulawesi Utara'
         ]);
 
         Provinsi::create([
-            'name' => 'Sulawesi Tenggara'
+            'provinsi_name' => 'Sulawesi Tenggara'
         ]);
 
         Provinsi::create([
-            'name' => 'Sulawesi Selatan'
+            'provinsi_name' => 'Sulawesi Selatan'
         ]);
 
         Provinsi::create([
-            'name' => 'Maluku Utara'
+            'provinsi_name' => 'Maluku Utara'
         ]);
 
         Provinsi::create([
-            'name' => 'Maluku'
+            'provinsi_name' => 'Maluku'
         ]);
 
         Provinsi::create([
-            'name' => 'Papua Barat'
+            'provinsi_name' => 'Papua Barat'
         ]);
         
         Provinsi::create([
-            'name' => 'Provinsi Papua Barat'
+            'provinsi_name' => 'Provinsi Papua Barat'
         ]);
     }
 }

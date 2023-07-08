@@ -22,6 +22,8 @@ class User extends Authenticatable
     protected $guarded = [
         'id',
     ];
+    protected $tables = 'users';
+    protected $primaryKey = 'id';
 
     /**
      * The attributes that should be hidden for serialization.
@@ -43,14 +45,14 @@ class User extends Authenticatable
     ];
 
     public function provinsi () {
-        return $this->belongsTo(Provinsi::class);
+        return $this->belongsTo('App\Models\Provinsi', 'provinsi_id' ,'id_provinsi');
     }
 
     public function kabupaten () {
-        return $this->belongsTo(Kabupaten::class);
+        return $this->belongsTo('App\Models\Kabupaten', 'kabupaten_id', 'id_kabupaten');
     }
 
-    public function barang() {
-        return $this->hasMany(Barang::class);
-    }
+    // public function barang() {
+    //     return $this->hasMany('App\Models\Barang', 'user_id');
+    // }
 }

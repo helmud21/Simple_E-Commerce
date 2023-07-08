@@ -18,10 +18,9 @@ class CreateBarangsTable extends Migration
             $table->foreignId('category_id');
             $table->foreignId('user_id');
             $table->string('barang_name');
-            $table->string('slug');
-            $table->string('harga');
+            $table->unsignedMediumInteger('harga');
             $table->text('detail');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

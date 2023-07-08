@@ -5,6 +5,13 @@
 <div class="container">
     <div class="row" id="user-regis">
         <div class="col-6" id="form-user-regis">
+            @if(session()->has('failed'))
+            <div class="alert alert-danger alert-dismissible fade show my-4" role="alert">
+                {{ session('failed') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            @endif
+
             <h1 id="header-user-regis">REGISTER FORM</h1>
             <form action="/user/create" method="POST">
                 @csrf
@@ -66,7 +73,7 @@
                     <select name="provinsi_id" class="form-select @error('provinsi') is-invalid @enderror" aria-label="Default select example" onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
                         <option selected disabled>Provinsi</option>
                         @foreach($short_provinsi as $provinsi)
-                        <option value="{{ $provinsi->id }}"> {{ $provinsi->name }} </option>
+                        <option value="{{ $provinsi->id_provinsi }}">{{ $provinsi->provinsi_name }}</option>
                         @endforeach
                     </select>
                     @error('provinsi')
@@ -80,7 +87,7 @@
                     <select name="kabupaten_id" class="form-select @error('kabupaten') is-invalid @enderror" aria-label="Default select example" onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
                         <option selected disabled>Kabupaten</option>
                         @foreach($short_kabupaten as $kabupaten)
-                        <option value="{{ $kabupaten->id }}">{{ $kabupaten->name }}</option>
+                        <option value="{{ $kabupaten->id_kabupaten }}">{{ $kabupaten->name }}</option>
                         @endforeach
                     </select>
                     @error('kabupaten')
@@ -101,7 +108,7 @@
                 </div>
 
                 <div id="btn-group-user">
-                    <button type="submit" class="btn btn-primary" id="submit-user-regis-btn" >Submit</button>
+                    <button type="submit" class="btn btn-primary" id="submit-user-regis-btn">Submit</button>
                     <button type="button" class="btn btn-primary" id="back-user-regis-btn"><a href="/">Back</a></button>
                 </div>
             </form>

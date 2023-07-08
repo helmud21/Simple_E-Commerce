@@ -17,7 +17,11 @@
     <div class="row" id="profile-wrapper">
         <div class="col-4">
             <div id="photo-profile">
+                @if(isset($user->photo))
                 <img src="{{asset('images/'.$user->photo)}}" alt="icon-user">
+                @else
+                <img src="{{asset('images/icon-user.png')}}" alt="icon-user">
+                @endif
             </div>
         </div>
 
@@ -49,7 +53,7 @@
                     <div class="input-group-prepend">
                         <div class="input-group-text">Provinsi</div>
                     </div>
-                    <input type="text" class="form-control" value="{{ $user->provinsi->name }}" disabled>
+                    <input type="text" class="form-control" value="{{ $user->provinsi->provinsi_name }}" disabled>
                 </div>
 
                 <div class="input-group mb-1">
@@ -139,7 +143,7 @@
                         <select name="provinsi_id" class="form-select @error('provinsi') is-invalid @enderror" aria-label="Default select example" onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
                             <option selected disabled>Provinsi</option>
                             @foreach($short_provinsi as $provinsi)
-                            <option value="{{ $provinsi->id }}" {{ $user->provinsi_id == $provinsi->id ? 'selected' : '' }}> {{ $provinsi->name }} </option>
+                            <option value="{{ $provinsi->id_provinsi }}" {{ $user->provinsi_id == $provinsi->id_provinsi ? 'selected' : '' }}> {{ $provinsi->provinsi_name }} </option>
                             @endforeach
                         </select>
                         @error('provinsi')
@@ -153,7 +157,7 @@
                         <select name="kabupaten_id" class="form-select @error('kabupaten') is-invalid @enderror" aria-label="Default select example" onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
                             <option selected disabled>Kabupaten</option>
                             @foreach($short_kabupaten as $kabupaten)
-                            <option value="{{ $kabupaten->id }}" {{ $user->kabupaten_id == $kabupaten->id ? 'selected' : '' }}>{{ $kabupaten->name }}</option>
+                            <option value="{{ $kabupaten->id_kabupaten }}" {{ $user->kabupaten_id == $kabupaten->id_kabupaten ? 'selected' : '' }}>{{ $kabupaten->name }}</option>
                             @endforeach
                         </select>
                         @error('kabupaten')

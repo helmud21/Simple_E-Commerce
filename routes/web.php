@@ -5,7 +5,10 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PembelianController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SelectController;
+use App\Http\Controllers\TokoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,4 +37,24 @@ Route::post('/logout', [LoginController::class, 'logout']);
 Route::get('/profile/{id}', [ProfileController::class, 'index'])->middleware('auth')->name('profile');
 Route::post('/profile/update/{id}', [ProfileController::class, 'update'])->middleware('auth');
 
-Route::get('/detail/{id}', [HomeController::class, 'detailBarang']);
+Route::get('/detail/{id}/barang', [HomeController::class, 'detailBarang']);
+Route::post('/cari/barang', [HomeController::class, 'cariBarang'])->name('cari.barang');
+Route::post('/post/selected/{id}', [HomeController::class, 'getSelected']);
+
+// Gunakan route berikut jika ingin menampilkan data menggunakan datatables
+Route::post('dataBarang', [TokoController::class, 'post'])->name('post.barang');
+Route::post('getBarang', [HomeController::class, 'getData'])->name('get.barang');
+
+Route::get('/dashboard/{id}/toko', [TokoController::class, 'index'])->name('dashboard.toko');
+Route::get('/edit/barang/{id}', [TokoController::class, 'editBarang'])->name('edit.barang');
+Route::get('/hapus/barang/{id}', [TokoController::class, 'hapusBarang'])->name('hapus.barang');
+Route::post('/post/barang', [TokoController::class, 'postBarang']);
+
+// Route pembelian
+Route::get('/beli/barang/{id}', [PembelianController::class, 'beliBarang']);
+Route::get('/pembelian/{id}', [PembelianController::class, 'dataPembelian']);
+Route::post('/bayar/barang', [PembelianController::class, 'bayarBarang']);
+
+//Route select2
+Route::post('/select/kategori', [SelectController::class, 'selectCategory'])->name('select.kategori');
+Route::get('/home/kategori', [HomeController::class, 'getSelected'])->name('get.selected');

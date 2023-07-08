@@ -14,10 +14,7 @@ class RegisterController extends Controller
         $kabupaten = Kabupaten::all();
         $short_provinsi = $provinsi->sortBy('name', SORT_NATURAL);
         $short_kabupaten = $kabupaten->sortBy('name', SORT_NATURAL);
-        return view('pendaftaran/user', [
-            'short_provinsi' => $short_provinsi,
-            'short_kabupaten' => $short_kabupaten
-        ]);
+        return view('pendaftaran/user', compact('short_provinsi', 'short_kabupaten'));
     }
 
     public function userCreate(Request $request) {
@@ -32,7 +29,7 @@ class RegisterController extends Controller
             'kabupaten_id' => 'required',
             'jalan' => 'required|min:10'
         ]);
-        
+
         $validatedData['password'] = bcrypt($validatedData['password']);
         User::create($validatedData);
         return redirect('/login')->with('success', 'Registration successfull! Please login.');

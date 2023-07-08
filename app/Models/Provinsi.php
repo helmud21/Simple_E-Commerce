@@ -9,11 +9,13 @@ class Provinsi extends Model
 {
     use HasFactory;
 
+    protected $primaryKey = 'id_provinsi';
+
     public function kabupaten() {
         return $this->hasMany(Kabupaten::class);
     }
 
     public function user() {
-        return $this->hasMany(User::class);
+        return $this->hasMany('App\Models\User', 'id', 'id_provinsi');
     }
 }

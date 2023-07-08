@@ -8,13 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Barang extends Model
 {
     use HasFactory;
-    protected $guarded = ['id'];
+    protected $tables = 'barangs';
+    protected $primaryKey = 'id_barang';
+    protected $guarded = ['id_barang'];
 
     public function category(){
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo('App\Models\Category', 'category_id', 'id_category');
     }
 
     public function user() {
-        return $this->hasMany(User::class);
+        return $this->belongsTo('App\Models\User', 'user_id', 'id');
     }
+
 }
